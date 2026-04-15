@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-dm-sans: 'DM Sans', sans-serif;
+    --font-dm-serif: 'DM Serif Display', serif;
+
+    /* Nonlinear Minds — Default (Low Stimulation Mode) */
+    /* Palette: sage green #bfc2b0, dusty blue #a5b4ba/#ced9dd, warm neutrals #edeae4/#e9e1da/#cebaa9 */
+    --background: 35 18% 92%;        /* #edeae4 warm neutral */
+    --foreground: 210 12% 18%;       /* dark blue-grey */
+    --card: 30 22% 95%;              /* #f5f2ee near white warm */
+    --card-foreground: 210 12% 18%;
+    --popover: 30 22% 95%;
+    --popover-foreground: 210 12% 18%;
+    --primary: 196 14% 63%;          /* dusty blue #a5b4ba */
+    --primary-foreground: 210 22% 14%;
+    --secondary: 84 10% 72%;         /* sage green #bfc2b0 */
+    --secondary-foreground: 84 15% 20%;
+    --muted: 33 16% 88%;             /* #e9e1da warm neutral */
+    --muted-foreground: 210 8% 48%;
+    --accent: 24 28% 73%;            /* #cebaa9 warm tan */
+    --accent-foreground: 24 30% 22%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 200 14% 82%;           /* #ced9dd light dusty blue */
+    --input: 200 14% 86%;
+    --ring: 196 25% 52%;
+    --radius: 0.875rem;
+
+    /* Brand tokens */
+    --sage: 84 10% 72%;
+    --sage-light: 84 12% 90%;
+    --dusty-blue: 196 14% 68%;
+    --dusty-blue-light: 200 14% 87%;
+    --warm-neutral: 35 18% 92%;
+    --warm-tan: 24 28% 73%;
+    --warm-tan-deep: 24 25% 60%;
+
+    --sidebar-background: 210 18% 24%;   /* deep dusty blue-grey */
+    --sidebar-foreground: 200 16% 84%;
+    --sidebar-primary: 200 20% 76%;      /* light dusty blue */
+    --sidebar-primary-foreground: 210 22% 14%;
+    --sidebar-accent: 210 16% 32%;
+    --sidebar-accent-foreground: 200 16% 88%;
+    --sidebar-border: 210 14% 30%;
+    --sidebar-ring: 196 18% 62%;
+  }
+
+  /* Dopamine Mode */
+  [data-theme="dopamine"] {
+    --background: 270 60% 97%;
+    --foreground: 270 30% 10%;
+    --card: 0 0% 100%;
+    --primary: 280 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 70% 85%;
+    --secondary-foreground: 190 60% 20%;
+    --accent: 45 100% 80%;
+    --accent-foreground: 45 80% 25%;
+    --muted: 270 30% 93%;
+    --muted-foreground: 270 20% 45%;
+    --border: 270 30% 85%;
+  }
+
+  /* Focus Mode */
+  [data-theme="focus"] {
+    --background: 220 20% 98%;
+    --foreground: 220 30% 8%;
+    --card: 0 0% 100%;
+    --primary: 220 60% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 92%;
+    --secondary-foreground: 220 30% 20%;
+    --accent: 220 15% 88%;
+    --accent-foreground: 220 30% 20%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 15% 50%;
+    --border: 220 20% 88%;
+  }
+
+  .dark {
+    --background: 260 25% 8%;
+    --foreground: 258 20% 90%;
+    --card: 260 20% 11%;
+    --card-foreground: 258 20% 90%;
+    --popover: 260 20% 11%;
+    --popover-foreground: 258 20% 90%;
+    --primary: 258 55% 65%;
+    --primary-foreground: 260 25% 8%;
+    --secondary: 260 20% 18%;
+    --secondary-foreground: 258 20% 80%;
+    --muted: 260 20% 15%;
+    --muted-foreground: 258 15% 55%;
+    --accent: 32 50% 30%;
+    --accent-foreground: 32 80% 85%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 20%;
+    --input: 260 20% 18%;
+    --ring: 258 55% 65%;
+    --sidebar-background: 260 30% 6%;
+    --sidebar-foreground: 258 20% 80%;
+    --sidebar-primary: 258 55% 65%;
+    --sidebar-primary-foreground: 260 25% 8%;
+    --sidebar-accent: 260 25% 13%;
+    --sidebar-accent-foreground: 258 20% 80%;
+    --sidebar-border: 260 20% 14%;
+    --sidebar-ring: 258 55% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .font-sans {
+    font-family: var(--font-dm-sans);
+  }
+  .font-display {
+    font-family: var(--font-dm-serif);
+  }
+}
