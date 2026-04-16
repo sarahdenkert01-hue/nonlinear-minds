@@ -1,0 +1,68 @@
+{
+  "name": "Session",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "description": "Client's name or initials"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the session"
+    },
+    "brain_dump": {
+      "type": "string",
+      "description": "Raw, messy notes from the session"
+    },
+    "generated_note": {
+      "type": "string",
+      "description": "AI-generated clinical note"
+    },
+    "note_chunks": {
+      "type": "array",
+      "description": "Editable chunks of the generated note",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "next_steps": {
+      "type": "string",
+      "description": "Unstuck Me \u2014 AI generated clinical compass"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "drafting",
+        "note_ready",
+        "complete"
+      ],
+      "default": "drafting"
+    },
+    "modality": {
+      "type": "string",
+      "description": "Therapy modality (e.g. CBT, DBT, ACT)"
+    },
+    "session_type": {
+      "type": "string",
+      "enum": [
+        "individual",
+        "couples",
+        "family",
+        "group"
+      ],
+      "default": "individual"
+    }
+  },
+  "required": [
+    "client_name"
+  ]
+}
